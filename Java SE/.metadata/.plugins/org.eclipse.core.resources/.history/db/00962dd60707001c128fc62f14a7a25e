@@ -1,0 +1,34 @@
+package com;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+public class DateTimeAPI {
+	public static void main(String[] args) {
+		
+		LocalDate date=LocalDate.now();
+		System.out.println(date);
+		LocalTime time=LocalTime.now();
+		System.out.println(time);
+		LocalDateTime dateAndTime=LocalDateTime.now();
+		System.out.println(dateAndTime);
+		// set custom date
+		LocalDate cd = LocalDate.of(2027,12,13);
+		System.out.println(cd);
+		
+		// Parses the date
+        LocalDate dt = LocalDate.parse("2018-11-01");
+        System.out.println(dt);
+  
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+        System.out.println(formatter.format(dt));
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd/MMMM/YYYY");
+        System.out.println(formatter1.format(dt));
+    
+		
+		
+	}
+
+}

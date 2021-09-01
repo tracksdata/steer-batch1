@@ -1,0 +1,9 @@
+package com;
+
+public class Use {
+	
+	void commonInfo() {
+		System.out.println(">>>> info from RBI");
+	}
+
+}

@@ -1,0 +1,19 @@
+package com;
+
+import java.sql.Connection;
+
+public class StatementDemoV1 {
+	
+	public static void main(String[] args) {
+		
+		
+		try {
+		Connection con=DBUtils.getConnection();	
+			
+		} catch (Exception e) {
+			System.out.println("Failed due to "+e);
+		}
+		
+	}
+
+}

@@ -1,0 +1,29 @@
+package com;
+
+class Rbi {
+	void commonInfo() {
+		System.out.println(">>>> info from RBI");
+	}
+}
+
+class Sbi extends Rbi{
+	
+	@Override
+	void commonInfo() {
+		System.out.println(">>>> indi from SBI");
+	}
+	
+	void custInfo() {
+		System.out.println(">>>> cust Info");
+	}
+	
+}
+
+public class Use {
+	public static void main(String[] args) {
+		Sbi s=new Sbi();
+		s.commonInfo();
+		
+	}
+
+}

@@ -1,0 +1,23 @@
+package com;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+public class CallableStatementDemo {
+
+	public static void main(String[] args) {
+
+		try {
+			Connection con = DBUtils.getConnection();
+			
+			CallableStatementDemo statement = con.prepareCall("{call procedure_name(?, ?, ?)}");
+
+		} catch (Exception e) {
+			System.out.println("Failed due to " + e);
+		} finally {
+			DBUtils.closeConnection();
+		}
+
+	}
+
+}

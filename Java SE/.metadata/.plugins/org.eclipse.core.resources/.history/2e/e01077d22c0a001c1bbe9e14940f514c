@@ -1,0 +1,25 @@
+package com;
+
+import java.sql.Connection;
+
+public class ResultSetDemo {
+	
+	public static void main(String[] args) {
+		
+		try {
+			
+			Connection con=DBUtils.getConnection();
+			String q1="select * from product";
+			
+			
+			
+		} catch (Exception e) {
+			System.out.println("failed due to "+e);
+		}finally {
+			DBUtils.closeConnection();
+		}
+		
+		
+	}
+
+}

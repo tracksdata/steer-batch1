@@ -1,0 +1,16 @@
+package com;
+
+import java.sql.DriverManager;
+
+public class Demo {
+	
+	public static void main(String[] args) {
+		
+		// load driver class
+		// 2 ways . 
+		// old one
+		//DriverManager.registerDriver(null);
+		
+	}
+
+}

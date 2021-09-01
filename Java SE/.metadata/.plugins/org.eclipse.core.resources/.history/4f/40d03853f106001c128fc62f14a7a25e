@@ -1,0 +1,17 @@
+package com;
+
+public class Use {
+
+	public static void main(String[] args) {
+		
+		Product p1=new Product(10,"Pen", 157, "Red Ink");
+		Product p2=new Product(11,"Book", 456, "Java");
+		Product p3=new Product(12,"Laptop", 233, "Sony Play Toy");
+		Product p4=new Product(14,"Mobile", 122, "Samsung");
+		Product p5=new Product(15,"Usb", 455, "256 GB 3.2");
+		
+		
+
+	}
+
+}

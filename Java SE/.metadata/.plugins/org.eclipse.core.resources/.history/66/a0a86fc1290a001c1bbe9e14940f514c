@@ -1,0 +1,33 @@
+package com;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+public class StatementDemoV3 {
+
+	public static void main(String[] args) {
+
+		try {
+			long st, et;
+			st = System.currentTimeMillis();
+			Connection con = DBUtils.getConnection();
+		 
+			String q1 = null;
+			PreparedStatement ps=null;
+			for (int i = 1; i <= 10000; i++) {
+				q1 = "insert into s1 values(" + i + ")";
+				ps=con.prepareStatement(q1);
+				ps.executeUpdate();
+			}
+			et = System.currentTimeMillis();
+			System.out.println("Total Time: " + (et - st));
+		} catch (Exception e) {
+			System.out.println("Failed due to " + e);
+		} finally {
+			DBUtils.closeConnection();
+		}
+
+	}
+
+}

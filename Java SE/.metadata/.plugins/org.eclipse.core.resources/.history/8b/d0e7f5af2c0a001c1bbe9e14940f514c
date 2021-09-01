@@ -1,0 +1,18 @@
+package com;
+
+public class ResultSetDemo {
+	
+	public static void main(String[] args) {
+		
+		try {
+			
+		} catch (Exception e) {
+			System.out.println("failed due to "+e);
+		}finally {
+			DBUtils.closeConnection();
+		}
+		
+		
+	}
+
+}

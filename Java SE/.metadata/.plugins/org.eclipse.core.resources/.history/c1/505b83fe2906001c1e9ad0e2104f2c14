@@ -1,0 +1,13 @@
+package com;
+
+public class Bank {
+
+	public void deposit(double amt) {
+	}
+
+	public double withDraw(double amt) {
+		return amt;
+
+	}
+
+}

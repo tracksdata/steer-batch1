@@ -1,0 +1,29 @@
+package com;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import com.mysql.cj.jdbc.Driver;
+
+public class Demo {
+	
+	public static void main(String[] args) {
+		
+		// load driver class
+		// 2 ways . 
+		// old one
+		try {
+			// way 1
+			//DriverManager.registerDriver(new Driver());
+			// way 2 
+			Class.forName("com.mysql.cj.jdbc.Driver1");
+			System.out.println(">> Driver class is loaded...");
+			
+			
+		} catch (Exception e) {
+			System.out.println("failed due to "+e);
+		}
+		
+	}
+
+}

@@ -1,0 +1,24 @@
+package com;
+
+abstract class Rbi {
+	abstract void commonInfo();
+}
+
+class Sbi extends Rbi{
+	
+	
+	
+	void custInfo() {
+		System.out.println(">>>> cust Info");
+	}
+	
+}
+
+public class Use {
+	public static void main(String[] args) {
+		Sbi s=new Sbi();
+		s.commonInfo();
+		
+	}
+
+}

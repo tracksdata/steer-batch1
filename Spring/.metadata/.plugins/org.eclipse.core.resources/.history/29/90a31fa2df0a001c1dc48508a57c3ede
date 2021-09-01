@@ -1,0 +1,20 @@
+package com.xoriant.shop;
+
+
+import com.xoriant.shop.service.BillingServiceImpl;
+
+public class Customer {
+
+	public static void main(String[] args) {
+
+		String[] cart = { "Item01", "Item02", "Item03" };
+
+		BillingServiceImpl biller = new BillingServiceImpl();
+		
+		double total = biller.getCartTotal(cart);
+		
+		System.out.println("Cart Total: " + total);
+
+	}
+
+}

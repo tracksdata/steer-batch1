@@ -1,0 +1,29 @@
+package com;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+public class StatementDemoV3 {
+
+	public static void main(String[] args) {
+
+		try {
+			Connection con = DBUtils.getConnection();
+			Statement stmt = con.createStatement();
+			String q1 =null;
+		
+			for(int i=1;i<=50000;i++) {
+				q1="insert into s1 values("+i+")";
+				stmt.executeUpdate(q1);
+			}
+			
+			System.out.println("rows inserted..");
+		} catch (Exception e) {
+			System.out.println("Failed due to " + e);
+		} finally {
+			DBUtils.closeConnection();
+		}
+
+	}
+
+}

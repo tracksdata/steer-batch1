@@ -1,0 +1,42 @@
+package com.xoriant.shop.service;
+
+import com.xoriant.shop.dao.PriceMatrixDaoImpl;
+
+//Dependent
+public class BillingServiceImpl {
+	/*
+	 * Design Issues
+	 * -----------------
+	 * 	-> too many dependency class objects
+	 * 			-> memory management is difficult
+	 * 			-> perfomance of application goes down
+	 * 
+	 *  Why this issue happened?
+	 *  ----------------------------
+	 *  -> dependent class itself creating dependency class object directly.
+	 *  
+	 *  what is the solution?
+	 *  ----------------------
+	 *  -> do not create dependency object in the dependent class directly
+	 *  -> instead use look up  techniques like 'JNDI'
+	 *  	-> dependent class is tightly coupled with JNDI location
+	 *  
+	 *  What is the best solution?
+	 *  ----------------------------
+	 *  
+	 * 
+	 */
+
+	public double getCartTotal(String[] cart) {
+
+		double total = 0.0;
+
+		//PriceMatrixDaoImpl price = new PriceMatrixDaoImpl();// dependency obj
+
+		for (String itemCode : cart) {
+			total = total + price.getItemPrice(itemCode);
+		}
+
+		return total;
+	}
+}

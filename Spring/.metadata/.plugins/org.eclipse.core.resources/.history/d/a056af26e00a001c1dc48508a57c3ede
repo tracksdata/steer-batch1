@@ -1,0 +1,28 @@
+package com.xoriant.shop.service;
+
+import com.xoriant.shop.dao.PriceMatrixDaoImpl;
+
+//Dependent
+public class BillingServiceImpl {
+	/*
+	 * Design Issues
+	 * -----------------
+	 * 	-> too many dependency class objects
+	 * 			-> memory management is difficult
+	 * 			-> perfomance of application goes down
+	 * 
+	 */
+
+	public double getCartTotal(String[] cart) {
+
+		double total = 0.0;
+
+		PriceMatrixDaoImpl price = new PriceMatrixDaoImpl();
+
+		for (String itemCode : cart) {
+			total = total + price.getItemPrice(itemCode);
+		}
+
+		return total;
+	}
+}

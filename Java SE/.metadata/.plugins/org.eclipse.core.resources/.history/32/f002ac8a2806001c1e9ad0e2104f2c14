@@ -1,0 +1,9 @@
+package com;
+
+public class Rbi {
+	
+	void commonInfo() {
+		System.out.println(">>>> info from RBI");
+	}
+
+}

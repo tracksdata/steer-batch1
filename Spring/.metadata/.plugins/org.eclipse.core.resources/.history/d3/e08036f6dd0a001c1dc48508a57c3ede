@@ -1,0 +1,19 @@
+package com.xoriant.shop.service;
+
+import java.util.List;
+
+public class BillingServiceImpl {
+
+	public double getCartTotal(String[] cart) {
+
+		double total = 0.0;
+
+		PriceMatrixDaoImpl price = new PriceMatrixDaoImpl();
+
+		for (String itemCode : cart) {
+			total = total + price.getItemPrice(itemCode);
+		}
+
+		return total;
+	}
+}

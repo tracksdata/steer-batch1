@@ -1,0 +1,19 @@
+package com;
+
+class Rbi {
+	void commonInfo() {
+		System.out.println(">>>> info from RBI");
+	}
+}
+
+class Sbi extends Rbi{
+	
+	void custInfo() {
+		System.out.println(">>>> cust Info");
+	}
+	
+}
+
+public class Use {
+
+}

@@ -1,0 +1,14 @@
+package com;
+
+public class Bank {
+
+	public void deposit(double amt) {
+		System.out.println(">>> deposit...");
+	}
+
+	public double withDraw(double amt) {
+		System.out.println(">>> Withdrals...");
+		return amt;
+	}
+
+}
