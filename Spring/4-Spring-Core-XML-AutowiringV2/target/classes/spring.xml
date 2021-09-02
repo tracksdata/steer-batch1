@@ -11,4 +11,5 @@
     <bean id="prodDao" class="com.xoriant.product.dao.ProductDaoImpl"/>
     <bean id="prodService" class="com.xoriant.product.service.ProductServiceImpl" autowire="constructor"/>
 
+
 </beans>
