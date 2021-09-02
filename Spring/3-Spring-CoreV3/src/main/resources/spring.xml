@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+  
+<!--   Scopes -->
+ 
+ <bean id="e1" class="com.Employee" lazy-init="true" scope="singleton" /> 
+ 
+ <bean id="e2" class="com.Employee" lazy-init="true"/> 
+ 
+ <bean id="e3" class="com.Employee" lazy-init="true"/> 
+ 
+ <bean id="prod" class="com.Product" lazy-init="true"/> 
+ 
+ 
+ <bean id="empDao" class="com.xoraint.emp.dao.EmployeeDapImpl" lazy-init="true"/> 
+ 
+ 
+<!--   <context:annotation-config/> -->
+<!--   <context:component-scan base-package="com.baeldung.applicationcontext"/> -->
+
+</beans>
