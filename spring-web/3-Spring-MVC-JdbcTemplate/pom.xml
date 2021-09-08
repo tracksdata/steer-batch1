@@ -3,11 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com</groupId>
-	<artifactId>1-Spring-MVC-V1</artifactId>
+	<artifactId>3-Spring-MVC-JdbcTemplate</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 
 	<dependencies>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -22,15 +23,34 @@
 			<version>5.3.9</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api -->
+
+		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
 		<dependency>
-			<groupId>javax.servlet.jsp.jstl</groupId>
-			<artifactId>jstl-api</artifactId>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
 
 
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>5.3.9</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.26</version>
+		</dependency>
+
 	</dependencies>
+
+
 
 	<build>
 		<plugins>
@@ -41,6 +61,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+
 			<plugin>
 
 				<groupId>org.apache.maven.plugins</groupId>
@@ -60,4 +81,12 @@
 		</plugins>
 
 	</build>
+
+
+
+
+
+
+
+
 </project>
