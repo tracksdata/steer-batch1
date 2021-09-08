@@ -19,13 +19,11 @@
 <body class="container">
 
 	<div class="alert alert-info text-center">
-		<h1>Products</h1>
+		<h1>Product Information</h1>
 
 	</div>
-	
 	<jsp:include page="menu.jsp"/>
 	<hr />
-	
 
 	<table class="table table-hover">
 
@@ -35,21 +33,20 @@
 				<th>Product Name</th>
 				<th>Price</th>
 				<th>Description</th>
-				<td>Option</td>
+
 			</tr>
 		</thead>
 
 		<tbody>
-			<c:forEach items="${products}" var="prod">
-				<tr>
-					<td>${prod.id}</td>
-					<td>${prod.name}</td>
-					<td>${prod.price}</td>
-					<td>${prod.description}</td>
-					<td> <a href="findProduct?id=${prod.id}">View</a></td>
+			<tr>
+				<td>${prod.id}</td>
+				<td>${prod.name}</td>
+				<td>${prod.price}</td>
+				<td>${prod.description}</td>
 
-				</tr>
-			</c:forEach>
+
+			</tr>
+
 
 		</tbody>
 
