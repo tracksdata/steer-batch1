@@ -9,10 +9,8 @@ import com.xoraint.eshop.dao.ProductDaoImpl;
 @SpringBootApplication
 public class Application {
 	
-
 	public static void main(String[] args) {
 		
-		System.out.println("Before ....");
 		ApplicationContext ac= SpringApplication.run(Application.class, args);
 		
 		ProductDaoImpl dao = ac.getBean(ProductDaoImpl.class);
