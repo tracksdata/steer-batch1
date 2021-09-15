@@ -66,6 +66,7 @@ public class ProductRestController {
 		
 		return new ResponseEntity<>(prod, HttpStatus.OK);
 	}
+	// .......
 
 	/*
 	 * @GetMapping(value = "v1") public Product findProductV1() { Product prod = new
