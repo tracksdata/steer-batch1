@@ -38,6 +38,12 @@ public class ProductRestController {
 	}
 	
 	
+	// 1. Find all Products by Brand Name
+	// 2. Find All Brand Names
+	// 3. Filter Products by Max and Min Price
+	// 4. Filter Products by Min product price Range
+	
+	
 	
 	
 	
