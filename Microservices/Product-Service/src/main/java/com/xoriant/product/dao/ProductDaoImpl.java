@@ -56,36 +56,22 @@ public class ProductDaoImpl implements ProductDao {
 
 	// find all brand names
 	@Override
-	public List<Product> findAllBrands() {
+	public List<Brand> findAllBrands() {
+
 		return jdbcTemplate.query(DbQueries.FIND_BRAND_NAMES, (ResultSet rs) -> {
-			List<Product> productList = new ArrayList<Product>();
+			List<Brand> brandList = new ArrayList<Brand>();
 			System.out.println(">>>>>>>>>>> LISTING ALL PRODUCTS - METHOD <<<<<<<<<<<");
 
 			while (rs.next()) {
 				System.out.println(">>>>>>>>>>> LISTING ALL PRODUCTS <<<<<<<<<<<");
-				Product product = new Product();
-				Category c = new Category();
-				Brand b = new Brand();
+				
+				Brand brand = new Brand();
+				brand.setBrandId(rs.getInt("brand_id"));
+				brand.setTitle(rs.getString("brand_title"));
 
-				c.setCategoryId(10);
-				c.setTitle("Bla");
-				b.setBrandId(11);
-				b.setTitle("Test");
-
-				product.setProductId(rs.getInt("product_id"));
-				product.setDescription(rs.getString("product_desc"));
-				product.setImagePath(rs.getString("product_image"));
-				product.setKeywords(rs.getString("product_keywords"));
-				product.setPrice(rs.getInt("product_price"));
-				product.setQty(rs.getInt("product_qty"));
-				product.setTitle(rs.getString("product_title"));
-				product.setCategory(c);
-				product.setBrand(b);
-				System.out.println(">>>>>>>>>>> " + c);
-				System.out.println(">>>>>>>>>>> " + b);
-				productList.add(product);
+				brandList.add(brand);
 			}
-			return productList;
+			return brandList;
 		});
 	}
 
@@ -210,7 +196,4 @@ public class ProductDaoImpl implements ProductDao {
 			return productList;
 		},catagoryId);
 	}
-
-	
-
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.xoriant.product.model.Brand;
 import com.xoriant.product.model.Product;
 import com.xoriant.product.service.ProductService;
 
@@ -39,11 +40,26 @@ public class ProductRestController {
 	
 	
 	// 1. Find all Products by Brand Name
+	@GetMapping("/brands/{brandName}")
+	public List<Product> filterByBrandName(@PathVariable String brandName){
+		return productService.filterProductsByBrandName("%"+brandName+"%");
+	}
 	// 2. Find All Brand Names
-	// 3. Filter Products by Max and Min Price
-	// 4. Filter Products by Min product price Range
+	@GetMapping("/brands")
+	public List<Brand> findAllBrands(){
+		return productService.findAllBrands();
+	}
+	// 3. Filter Products by Min and Max Price
 	
-	
+	@GetMapping("/{minPrice}/{maxPrice}")
+	public List<Product> findProductsByMinAndMaxPrice(@PathVariable int minPrice,@PathVariable int maxPrice){
+		return productService.filterProductsByMinAndMaxRange(minPrice, maxPrice);
+	}
+	// 4. Filter Products by  product Max price Range
+	@GetMapping("/price/{maxPrice}")
+	public List<Product> findProductsByMaxPrice(@PathVariable int maxPrice){
+		return productService.filterProductsByMaxPriceRange(maxPrice);
+	}
 	
 	
 	

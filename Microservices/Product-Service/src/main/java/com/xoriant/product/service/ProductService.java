@@ -2,11 +2,12 @@ package com.xoriant.product.service;
 
 import java.util.List;
 
+import com.xoriant.product.model.Brand;
 import com.xoriant.product.model.Product;
 
 public interface ProductService {
 	// find all brand names
-	List<Product> findAllBrands();
+	List<Brand> findAllBrands();
 
 	// filter products by brand
 	List<Product> filterProductsByBrandName(String brandName);

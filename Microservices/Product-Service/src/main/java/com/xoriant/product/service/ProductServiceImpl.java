@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.xoriant.product.dao.ProductDao;
+import com.xoriant.product.model.Brand;
 import com.xoriant.product.model.Product;
 
 @Service
@@ -15,7 +16,7 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDao productDao;
 
 	@Override
-	public List<Product> findAllBrands() {
+	public List<Brand> findAllBrands() {
 		// TODO Auto-generated method stub
 		return productDao.findAllBrands();
 	}
