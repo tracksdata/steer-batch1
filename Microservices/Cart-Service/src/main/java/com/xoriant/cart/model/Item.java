@@ -1,6 +1,5 @@
 package com.xoriant.cart.model;
 
-import java.io.Serializable;
 
 public class Item{
 	

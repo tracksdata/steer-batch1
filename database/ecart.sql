@@ -32,7 +32,7 @@ CREATE TABLE `brands` (
 
 
 
-INSERT INTO `brands` (`brand_id`, `brand_title`) VALUES
+INSERT INTO `` (`brand_id`, `brand_title`) VALUES
 (1, 'HP'),
 (2, 'Samsung'),
 (3, 'Apple'),
