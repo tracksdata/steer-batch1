@@ -1,6 +1,5 @@
 import { useState,useEffect} from 'react';
 
-
 const App = () => {
 
   const [city, setCity] = useState();
@@ -82,3 +81,5 @@ const App = () => {
 };
 
 export default App;
+
+
