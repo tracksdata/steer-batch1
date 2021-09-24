@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import productOperations from '../services/ProductHttpService';
+import {Link} from 'react-router-dom';
 const Products = () => {
     const [products, setProducts] = useState([]);
     let { loadAllProducts } = productOperations();
@@ -15,7 +16,11 @@ const Products = () => {
         return products.map(product => {
             return (
                 <tr>
-                    <td> {product.productId} </td>
+                    <td>
+                        <Link to={`find/${product.productId}`}>
+                         {product.productId} 
+                         </Link>
+                         </td>
                     <td> {product.title} </td>
                     <td> {product.price} </td>
                     <td> {product.description} </td>

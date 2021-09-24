@@ -26,5 +26,7 @@ public interface ProductService {
 
 	// Find product By Product ID
 	public Product findById(int productId);
+	
+	public Product save(Product product);
 
 }

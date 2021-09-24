@@ -26,7 +26,8 @@ const Welcome = () => {
 
                             <Route path="/" exact component={Home} />
                             <Route path="/findAll" component={Products} />
-                            <Route path="/find" component={Product} />
+                            <Route path="/find" exact component={Product} />
+                            <Route path="/find/:productId" exact component={Product} />
                             <Route path="/product-form" component={ProductForm} />
                             <Route path="/user" component={User} />
                             <Route path="/cart" component={Cart} />

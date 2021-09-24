@@ -3,6 +3,11 @@ const PRODUCT_BASE_URL = 'http://localhost:8081/api/products';
 
 export default function productOperations() {
 
+
+    function saveProduct(product){
+        return axios.post(PRODUCT_BASE_URL,product);
+    }
+
     function loadAllProducts() {
         return axios.get(PRODUCT_BASE_URL);
     }
@@ -31,6 +36,7 @@ export default function productOperations() {
     }
 
     return {
+        saveProduct,
         loadAllProducts,
         findProductsById,
         findProductsByCategory,

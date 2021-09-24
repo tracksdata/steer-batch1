@@ -20,4 +20,11 @@ public class Brand {
 		this.title = title;
 	}
 
+	@Override
+	public String toString() {
+		return "Brand [brandId=" + brandId + ", title=" + title + "]";
+	}
+	
+	
+
 }

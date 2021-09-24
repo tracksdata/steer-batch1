@@ -18,6 +18,11 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	
+	public Product save(Product product) {
+		jdbcTemplate.update(DbQueries.SAVE_NEW_PRODUCT,product.getProductId(),product.getCategory().getCategoryId(),product.getBrand().getBrandId(),product.getTitle(),product.getPrice(),product.getQty(),product.getDescription(),product.getImagePath(),product.getKeywords());
+		return product;
+	}
 
 	// find Product by product ID
 	 @Override

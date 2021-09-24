@@ -60,4 +60,10 @@ public class ProductServiceImpl implements ProductService {
 			return null;
 	}
 
+	@Override
+	public Product save(Product product) {
+		// TODO Auto-generated method stub
+		return productDao.save(product);
+	}
+
 }

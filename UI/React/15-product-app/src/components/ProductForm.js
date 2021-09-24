@@ -1,11 +1,21 @@
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
+import productOperations from '../services/ProductHttpService';
+
 const ProductForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     // const onSubmit = product => console.log(product);
+    let { saveProduct } = productOperations();
     function onSubmit(product) {
+
         console.log(product);
+        saveProduct(product)
+            .then(product => {
+                console.log(">>>>>>>>>>>>>>>>");
+                console.log(product);
+                console.log("<<<<<<<<<<<<<<<<");
+            })
         return product;
     }
 
@@ -15,7 +25,6 @@ const ProductForm = () => {
             <h2>Product Form</h2>
             <hr />
             <form onSubmit={handleSubmit(onSubmit)}>
-
 
                 <div>
                     <select {...register("brand.brandId")}>
@@ -29,7 +38,7 @@ const ProductForm = () => {
                 <div>
                     <select {...register("category.categoryId")}>
                         <option value="">Select...</option>
-                        <option value="1">Electronics</option>
+                        <option value="12">Electronics</option>
                         <option value="2">Kitchen Items</option>
                     </select>
                 </div>
@@ -59,6 +68,29 @@ const ProductForm = () => {
                     <input {...register("description", { required: true })} placeholder="Description" />
                     <span className="text-danger">
                         {errors.description && <span>Description is required</span>}
+                    </span>
+                </div>
+
+                <div>
+                    <input {...register("qty", { required: true })} placeholder="Quantity" />
+                    <span className="text-danger">
+                        {errors.qty && <span>Quantity is required</span>}
+                    </span>
+                </div>
+
+                <div>
+                    <input {...register("imagePath", { required: true })} placeholder="Image Path" />
+                    <span className="text-danger">
+                        {errors.imagePath && <span>Image Path is required</span>}
+                    </span>
+                </div>
+
+                <div>
+                    <textarea  {...register("keywords", { required: true })} placeholder="keywords">
+                    
+                    </textarea>
+                    <span className="text-danger">
+                        {errors.keywords && <span>Keywords are required</span>}
                     </span>
                 </div>
 
