@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-const Products = ({ product, cartF1,tot }) => {
+const Products = ({ product, cartF1, tot }) => {
     console.log(">>>>");
     console.log(product);
     const [quantity, setQuantity] = useState(0);
     const [price, setPrice] = useState(product.price);
 
     useEffect(() => {
-        cartF1( (price * quantity));
+        cartF1((tot + price * quantity));
     }, [quantity])
 
 
